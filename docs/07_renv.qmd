@@ -1,0 +1,22 @@
+---
+title: "Dependency management"
+---
+
+<div style="height: 2em;"></div>
+
+
+## `renv`
+
+
+## Setup
+
+
+## Wrapping up
+
+
+## Restoration
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

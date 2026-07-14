@@ -1,0 +1,19 @@
+---
+title: "Open science"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Research repositories
+
+
+
+## 
+
+
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

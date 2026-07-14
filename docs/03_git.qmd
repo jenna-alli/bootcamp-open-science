@@ -1,0 +1,42 @@
+---
+title: "Version control"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Git
+
+
+
+## GitHub
+
+
+
+## Workflow
+
+
+
+## Beginning a project
+
+
+
+## Working on a project
+
+
+
+## Returning to a project
+
+
+
+## Repository structure
+
+
+
+## Tips
+
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

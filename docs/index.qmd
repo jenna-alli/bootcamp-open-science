@@ -1,0 +1,31 @@
+---
+author:
+  - name: Martin Ho
+    email: martinkh.ho@mail.utoronto.ca
+date: today
+date-format: long
+---
+
+
+# Welcome {.landing-title}
+
+## Setup required
+
+1. Git ![Git logo](assets/images/git_logo.png){.inline-logo height=1em}
+2. GitHub ![GitHub logo](assets/images/github_logo.png){.inline-logo height=1em}
+3. VS Code ![VS Code logo](assets/images/vscode_logo.png){.inline-logo height=1em}
+
+
+## Motivation
+
+
+
+
+## Declaration of generative AI and AI-assisted technologies
+
+All instructional material in this book was written by the author. Generative AI did not determine the content or technical recommendations presented here, though OpenAI ChatGPT (GPT-5.6-Sol, reasoning: instant) helped proofread. OpenAI Codex (GPT-5.6-Terra, reasoning: high) helped format the book. The author reviewed, edited, and verified the suggestions as needed and takes full responsibility for the final product.
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

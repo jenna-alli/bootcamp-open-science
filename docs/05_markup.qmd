@@ -1,0 +1,18 @@
+---
+title: "Markup"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Types of markup
+
+
+## Markdown
+
+
+
+::: {.content-visible when-format="html"}
+## References
+:::
+

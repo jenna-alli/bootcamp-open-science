@@ -1,0 +1,31 @@
+---
+title: "FOSS"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Free and Open-Source Software (FOSS)
+
+
+
+## Disadvantages
+
+
+
+## Examples
+
+
+
+## Why companies release FOSS
+
+
+
+## Can FOSS be commercialized
+
+
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

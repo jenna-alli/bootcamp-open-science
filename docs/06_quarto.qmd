@@ -1,0 +1,16 @@
+---
+title: "Quarto"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Quarto
+
+
+## For researchers
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

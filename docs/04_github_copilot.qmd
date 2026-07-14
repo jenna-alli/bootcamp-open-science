@@ -1,0 +1,17 @@
+---
+title: "GitHub Copilot"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Coding agents
+
+
+## 
+
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

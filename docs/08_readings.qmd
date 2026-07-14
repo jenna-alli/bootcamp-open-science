@@ -1,0 +1,9 @@
+---
+nocite: |
+    @wang2023harmonized
+    @xie2026markdown
+---
+
+# [Readings]{.content-visible unless-format="pdf"}[References]{.content-visible when-format="pdf"} {#readings}
+
+<div style="height: 1em;"></div>
