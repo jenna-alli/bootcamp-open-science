@@ -14,7 +14,42 @@ GitHub is a cloud-based platform that hosts Git projects (called repositories ak
 
 ![Remote repo vs. local repo [@weberpals2025lets]](assets/images/remote_local.png){width=400px}
 
-There is a **remote** version of the repo that is stored in the cloud by GitHub (Git denotes the remote repo with the prefix `origin/`). There is also a **local** version of the repo that is stored in your computer (no prefix). If you have collaborators, they will have their own local version stored in their computer. These versions may be out of sync, by design, so that collaborators can work on the same project simultaneously without causing conflicts. These versions talk to each other by *pushing* code up (from local → remote) and *pulling* it down (from remote → local).
+There is a **remote** version of the repo that is stored in the cloud by GitHub (Git denotes the remote repo with the prefix `origin/`). There is also a **local** version of the repo that is stored in your computer (no prefix). Further, if you have collaborators, they will have their own local version stored in their computer. These versions may be out of sync, by design, so that collaborators can work on the same project simultaneously without causing conflicts. These versions talk to each other by *pushing* code up (from local → remote) and *pulling* it down (from remote → local).
+
+
+## Branches
+
+The default branch that gets created is called `main`. So now you have:
+
+```{.markdown}
+origin/main (remote)
+↓
+main (local)
+```
+
+Branches are parallel versions of an existing branch. `main` is stable/official version, while other branches are copies of it that let you try out changes in isolation. Avoid working in the `main` branch directly; instead, create a new branch based on `main` (say, `my-branch`) and make your changes there. So now you have:
+
+```{.markdown}
+origin/main (remote)
+↓
+main (local)     →     my-branch (local)
+```
+
+But notice that the remote repo is behind your local repo -- it does not have a copy of `my-branch` yet. You need to *publish* this branch to `origin/my-branch` (more about this below). So now you have:
+
+```{.markdown}
+origin/main (remote) ← origin/my-branch (remote)
+↓                      ↑
+main (local)     →     my-branch (local)
+```
+
+This is a cycle. Now that your changes are in `origin/my-branch`, you want to pull the changes across into `origin/main`, pull the changes down into `main`, and if you want to make further changes then create another branch (say, `my-branch2`). Typically, people do not keep persistent branches except for `origin/main` and `main` -- once you finish with a branch, you discard it and start a new one, which is why I gave the example name of `my-branch2` instead of reusing `my-branch` from before. So, actually, this is a spiral - not a cycle! To illustrate:
+
+```{.markdown}
+origin/main (remote)
+↓
+main (local)     →     my-branch2 (local)
+```
 
 
 ## Typical workflow
@@ -29,8 +64,8 @@ Your snapshots are known as your commit history.
 
 If the remote repo is ahead of your local repo, then you need to sync it. There are different ways to do this:
 
-- **Clone:** use when you first start; create a local copy of the repo
-- **Pull:** use while working on an existing project; downloads changes, typically from the remote repo (it is a two-step process: first it "fetches" the changes to see what is new, then it "merges" the changes in)
+- **Clone:** use when you first start; download a full copy of the repo locally (including the full commit history)
+- **Pull:** use while working on an existing project; downloads changes, typically from the remote repo (it is a two-step process: first it "fetches" the changes to see what is new, then it "merges" the changes into the current branch)
 
 
 ## Setup
@@ -63,51 +98,115 @@ Now, clone the repo:
 
 ## Working
 
-17. Do what you normally do, creating files and folders in RStudio, VS Code, and/or File Explorer (Windows) or Finder (macOS)
-18. Amend the `README`, `LICENSE`, and `.gitignore` as needed -- more about these in the [next chapter](05_repo_structure.qmd)
+17. Create a branch by clicking the **main** on the bottom left of VS Code
+18. A dropdown menu will appear from the search bar; click **+ Create a new branch** (this will use your current branch, `main`, as the template) and give it a name
+19. Notice the branch name on the bottom left has changed; in fact, if you wanted, you can switch between branches by clicking that branch name and selecting different branches
+20. Do what you normally do, creating files and folders in RStudio, VS Code, and/or File Explorer (Windows) or Finder (macOS)
+21. Amend the `README`, `LICENSE`, and `.gitignore` as needed -- more about these in the [next chapter](05_repo_structure.qmd)
 
 When you reach a stable version of the project:
 
-19. On VS Code, click the **Source Control** button on the sidebar
+22. On VS Code, click the **Source Control** tab on the sidebar
 
 ![VS Code - Source Control](assets/images/vscode_source_control.png){width=400px}
 
-20. Stage changes by hovering your pointer over the files and click the `+` symbol; if you want to stage all, hover your pointer over the the **Changes** row and click its `+` symbol
-21. Commit changes by providing a brief commit message in the free text field and clicking the blue **Commit** button
-22. Push changes by clicking the blue **↑ Sync changes** button; if you do not see it (likely because you did not stage all changes), hover your pointer over the **CHANGES** row and click its `...` symbol, then click **Push**
+23. Stage changes by hovering your pointer over the files and click the `+` symbol; if you want to stage all, hover your pointer over the the **Changes** row and click its `+` symbol
+    - Notice that empty folders cannot be staged because Git tracks files, not folders
+24. Commit changes by providing a brief commit message in the free text field and clicking the blue **Commit** button
+25. Push changes by clicking the blue **Publish branch** button; if you do not see it (likely because you did not stage all changes), hover your pointer over the **CHANGES** row and click its `...` symbol, then click **Push**
 
+Now go to GitHub and you should see a yellow banner notifying you that you can create a pull request. A pull request is a request to merge, i.e., apply changes form one branch to another.
 
-
-
+26. You can click that green **Compare & pull request** button to create a pull request; if it is not there, go to the **Pull requests** tab and click the green **New pull request** button, then select **base: main** and **compare:** as the branch you want to add changes from
+    - "Pull request" is an unfortunate name as it feels more like *pushing* changes to main
+    - GitHub instead thinks of it as *pulling* changes into main
+27. Provide a pull request description
+28. Click the green **Create pull request** button
+29. GitHub will check for *merge conflicts*; merge conflicts may occur because the remote repo has drifted since you last pulled it, and you made changes to the same sections of code -- GitHub will not know how to deal with this and you will have to resolve it before proceeding
+30. The repo maintainer(s) -- which would be you if this is your repo -- will assign someone or themself (or multiple people, or a coding assistant) to review the pull request
+    - Unless you are working by yourself, it is best to have a different pair of eyes reviewing your changes
+31. The repo maintainer(s) can comment, request change, close without merging (reject), or merge (approve, i.e., merge it into `origin/main` and then the branch can be deleted)
 
 
 ## Returning
 
+Now `origin/main` is up to date, but `main` is behind. To sync:
+
+32. On VS Code, switch back to `main`
+33. Go to the **Source Control** tab on the sidebar
+34. Give VS Code some time as it should automatically fetch changes from the remote repo, then you can click the blue **↓ Sync changes** button
+    - If there is no blue button, you may need to manually refresh by hovering your pointer over the the **CHANGES** row and click its refresh symbol
+    - If it does not appear, you may need to manually pull changes by hovering your pointer over the the **CHANGES** row and click its `...` symbol, then **Pull**
+
 
 ::: {.callout-note}
 ## **Note**
-Almost all the steps above use the graphical user interface (GUI) rather than typing git commands in the terminal (command-line interface (CLI)). It is possible to do all these steps through the terminal, but that is outside the scope of this bootcamp.
+All the steps above use the graphical user interface (GUI) rather than typing git commands in the terminal (command-line interface (CLI)). It is possible to do all these steps through the terminal, but that is outside the scope of this bootcamp.
 :::
-
-
-## Repository structure
-
 
 
 ## Private vs. public
 
+Generally, start with a private repo and only make public when finalized. Note that making a repo public will make the entire history public too -- beware any informalities or protected data (e.g., credentials, small cell counts, commercial data, comments that refer to sensitive information) in the history. Once data becomes public, it cannot be easily retracted, and someone (or a machine) may have already saved a local copy. Prevention is better than cure:
 
-![Github user interface](assets/images/github_gui.png)
+- Clearly structure your repo so that data and output are separated from your code
+- Use `.gitignore` (see the [next chapter](05_repo_structure.qmd#gitignore)) to leave out certain files and folders from commits
+- Instead of converting a repo from private to public with all the history, consider creating a public repo from scratch
 
 
-## 
+## Forking
+
+If you are working with your own repo (or a collaborator's repo), then all the above works well because you have write access. This is called the **shared repository model**.
+
+By contrast, if you do not have write access, you would need to first **fork** a copy to your own GitHub profile before cloning. Although you do not have write access to their repo, you *do* have rights to your fork; you can push changes to your fork without modifying the original repo. Then if you have a suggestion for the original owner, you can open a pull request to the original "upstream" repo from your fork. This is called the **fork and pull model** and is how open source software development happens.
+
+To fork, click the **Fork** button on the top right of a repo's GitHub page. You will be asked which branch to copy; in most cases, you only need the `main` branch.
 
 
-## Glossary
+## Glossary [@opensauced2025what]
+
++------------+------------------------------------------------------------------------------------------+
+| Term       | Definition                                                                               |
++============+==========================================================================================+
+| Branch     | A parallel version of the repository where you can test changes in isolation from `main` |
++------------+------------------------------------------------------------------------------------------+
+| Clone      | A local copy of a repository, including its files and Git history.                       |
++------------+------------------------------------------------------------------------------------------+
+| Contributor | Anyone who helps a project -- developers, designers, testers, etc.                      |
++------------+------------------------------------------------------------------------------------------+
+| Fork       | A copy of someone else's repository under your own GitHub account; you can change it     |
+|            | without affecting the original repository                                                |
++------------+------------------------------------------------------------------------------------------+
+| Issue      | A GitHub discussion item used to track a bug, question, feature request, etc.            |
++------------+------------------------------------------------------------------------------------------+
+| Maintainer | A person or group responsible for a project. Maintainers review pull requests and make   |
+|            | decisions about the project                                                              |
++------------+------------------------------------------------------------------------------------------+
+| Merge      | To combine changes from one branch into another, often after a pull request is approved  |
++------------+------------------------------------------------------------------------------------------+
+| PR         | Pull request: a proposal to merge changes from one branch or fork into another branch    |
++------------+------------------------------------------------------------------------------------------+
+| Repository | A project folder that Git tracks, including its files and history (local or remote)      |
++------------+------------------------------------------------------------------------------------------+
 
 
 ## GitHub Copilot
 
+GitHub Copilot is a coding agent developed by Microsoft that is integrated into your Git and coding workflow. It can be powered by different large language models, depending on the task. It has contextual learning - the context includes your prompt as well as your repo (docs, code, etc.). The chat box with GitHub Copilot is integrated into VS Code on the right panel under the tab called **CHAT**. GitHub Copilot can also offer code completions as you type.
+
+Although there is a free tier, the usage limits are quite low. You can check your usage by clicking the GitHub Copilot logo on the bototm right of VS Code. GitHub education, mentioned in the bootcamp prep, would give you higher limits, more features, and some self-paced courses.
+
+Coding assistants can help with [@weberpals2025lets]:
+
+- Code comprehension
+- Code summarization
+- Code review
+- Code translation across programming languages
+- Code development
+- Code testing
+- Code optimization (improving efficiency)
+- Code refactoring (improving readability and maintainability)
+- Code documentation (especially README)
 
 
 ::: {.content-visible when-format="html"}

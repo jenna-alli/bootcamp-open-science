@@ -71,7 +71,7 @@ Code sharing has many advantages, including facilitating replication and reuse, 
 
 ![Location of code, when shared [@tazare2024sharing]](assets/images/pds5856-fig-0001-m.jpg){width=600px}
 
-There are many other aspects of [open science](02_open_science.qmd) [@centerforopensciencewhat]. For this session, we will only focus on the technical aspects of open science. While there are many ways to implement these practices (e.g., GitHub vs. GitLab, Quarto vs. R Markdown, GUI vs. CLI), the tools and workflows presented here represent one opinionated approach chosen for their simplicity and ease of adoption.
+There are many other aspects of [open science](02_open_science.qmd) [@centerforopensciencewhat]. For this session, we will only focus on the technical aspects of open science that facilitate reproducible analytic workflows [@weberpals2024fairification]. While there are many ways to implement these practices (e.g., GitHub vs. GitLab, Quarto vs. R Markdown, GUI vs. CLI), the tools and workflows presented here represent one opinionated approach chosen for their simplicity and ease of adoption.
 
 
 ## Declaration of generative AI and AI-assisted technologies

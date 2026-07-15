@@ -7,12 +7,47 @@ title: "Markup"
 
 ## Types of markup
 
+**Markup** is plain text with simple symbols that describe how the text should be structured or displayed—for example, as a heading, list, link, or table. Software can read those symbols and turn the text into a formatted document.
+
++----------+-------------------------------------------------------------------------+
+| Type     | Example                                                                 |
++==========+=========================================================================+
+| Markdown | A `README.md` file or a Quarto document                                 |
++----------+-------------------------------------------------------------------------+
+| HTML     | A web page viewed in a browser                                          |
++----------+-------------------------------------------------------------------------+
+| LaTeX    | A typeset academic paper; expecially great for mathematical expressions |
++----------+-------------------------------------------------------------------------+
+| XML      | This is what underlies `.docx`, `.xlsx`, `.pptx`                        |
++----------+-------------------------------------------------------------------------+
 
 ## Markdown
 
+Markdown is especially common because it is simple and lightweight. It is used by GitHub, Quarto, Jupyter notebooks, and many other tools. A Markdown file is simply a text file, so it is easy to edit, share, and track with Git.
+
+Common Markdown syntax includes [@xie2026markdown]:
+
++-----------------+------------------------------------------------------------+
+| What you want   | Markdown syntax                                            |
++=================+============================================================+
+| Heading         | `# Main heading`, `## Subheading`                          |
++-----------------+------------------------------------------------------------+
+| Bold or italics | `**bold**`, `*italics*`                                    |
++-----------------+------------------------------------------------------------+
+| Bulleted list   | `- Item`                                                   |
++-----------------+------------------------------------------------------------+
+| Numbered list   | `1. Item`                                                  |
++-----------------+------------------------------------------------------------+
+| Link            | `[Text](https://example.com)`                              |
++-----------------+------------------------------------------------------------+
+| Image           | `![Caption](image.png)`                                    |
++-----------------+------------------------------------------------------------+
+| Inline code     | `` `code` ``                                               |
++-----------------+------------------------------------------------------------+
+| Code block      | Three backticks on the lines before and after the code     |
++-----------------+------------------------------------------------------------+
 
 
 ::: {.content-visible when-format="html"}
 ## References
 :::
-

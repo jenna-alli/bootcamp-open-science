@@ -1,7 +1,8 @@
 ---
 nocite: |
-    @bryanhappy
+    @github2026open
     @wang2023harmonized
+    @weberpals2024fairification
     @xie2026markdown
 ---
 

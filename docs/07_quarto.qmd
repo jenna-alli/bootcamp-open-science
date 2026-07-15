@@ -7,11 +7,129 @@ title: "Quarto"
 
 ## Literate programming
 
+Literate programming is a programming paradigm introduced by Donald Knuth in 1984 [@knuth1984literate], in which source code is interwoven with human-readable documentation. In other words: `literate programming = documentation + source code + output/results` in a single document, without having to switch between the manuscript and separate scripts [@weberpals2025lets].
+
+For R users, this approach became widely accessible through R Markdown, which combines:
+
+- `knitr`, to execute R code chunks and generate a Markdown file
+- Pandoc, to convert the Markdown file into various formats such as HTML, PDF, Microsoft Word, and slides
+
+R Markdown can be used to make documents, reports, books, slides, websites, etc. (i.e., it is a 'single-source' publishing system). One limitation of R Markdown was that `knitr` tied it to the R ecosystem. **Quarto**, released by Posit in 2022, is an open source technical publishing system that extends R markdown:
+
+- It unifies the publishing framework across multiple programming languages -- even proprietary ones like SAS and STATA with some additional setup [@weberpals2025lets]
+- It works with most IDEs, including RStudio, VS Code, JupyterLab, etc. [@weberpals2025lets] In fact, in the workshop we will use the Quarto that is bundled with RStudio installation.
+
 
 ## Quarto
 
+At the top of a Quarto document, we provide metadata in a **YAML header**. For example:
+
+```text
+---
+title: "My study"
+author: "Your Name"
+date: last-modified
+toc: true
+number-sections: true
+format:
+  html: default
+---
+```
+
+In the rest of the document, provide a mixture of plain text (using Markdown syntax) and embed code chunks in any supported language. The leading `.` below tells Quarto to just display these as examples in this book rather than execute them; omit them in a real document to run the code. For example:
+
+````{.markdown}
+First, let us import the data using R.
+
+```{.r}
+# Load library
+library(readr)
+
+# Read dataset
+df <- read_csv('my_data.csv')
+```
+````
+
+Or, alternatively:
+
+````{.markdown}
+First, let us import the data using Python.
+
+```{.python}
+# Load library
+import pandas as pd
+
+# Read dataset
+df = pd.read_csv('my_data.csv')
+```
+````
+
+For HTML output, you can also organize related content into tabs and fold individual code blocks. This example creates two tabs; the `code-fold` option hides each code block until the reader chooses to show it by clicking the **Show code** button:
+
+````{.markdown}
+::: {.panel-tabset}
+
+## R
+```{.r}
+#| code-fold: true
+
+summary(df)
+```
+
+## Python
+```{.python}
+#| code-fold: true
+
+df.describe()
+```
+
+:::
+````
+
+Here is the rendered result in HTML:
+
+::: {.panel-tabset}
+## R
+```{r}
+#| eval: false
+#| code-fold: true
+#| code-summary: "Show R code"
+
+summary(df)
+```
+
+## Python
+```{python}
+#| eval: false
+#| python.reticulate: false
+#| code-fold: true
+#| code-summary: "Show Python code"
+
+df.describe()
+```
+:::
+
+To write mathematical expressions, we can embed LaTeX. For example:
+
+```{.markdown}
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p
+$$
+```
+
+renders as:
+
+$$
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_p X_p
+$$
+
+
+You can add various reporting elements, including numbered figures, tables, flowcharts, and references [@weberpals2025lets], though we will not show these as it is outside the scope of this bootcamp.
+
 
 ## For researchers
+
+With Quarto, you can do an entire study from end to end in one system. In fact, some journals have published their [Quarto templates](https://quarto.org/docs/manuscripts/components.html). Here is [an example](https://mine-cetinkaya-rundel.github.io/indo-rct/) of a study that rendered their manuscript using Quarto (be patient; it will take a bit of time to render). In this example, they rendered as HTML, but Quarto can render to various output types.
 
 
 ::: {.content-visible when-format="html"}

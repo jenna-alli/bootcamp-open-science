@@ -7,20 +7,82 @@ title: "Repo structure"
 
 ## `.gitignore`
 
+`.gitignore` is a plain text file that tells Git which files and folders to leave out of commits. Use it for files that are generated automatically or contain sensitive information. **It does not stop Git from tracking a file that was already committed.**
+
+If you selected a `.gitignore` template when you first created your repo, it will already specify the usual suspects to ignore. You can amend it as needed.
+
++-----------------------------+--------------------------------------------------------------+---------------------+
+| Rule                        | What it does                                                 | Example             |
++=============================+==============================================================+=====================+
+| `#` at the start of a line  | Adds a comment; comments are skipped by Git                  | `# A comment`       |
++-----------------------------+--------------------------------------------------------------+---------------------+
+| File name                   | Ignores files with that name                                 | `.Rhistory`         |
++-----------------------------+--------------------------------------------------------------+---------------------+
+| `*` wildcard                | Ignores files with a matching extension or name pattern      | `*.xlsx`            |
++-----------------------------+--------------------------------------------------------------+---------------------+
+| Folder name ending in `/`   | Ignores that folder and everything inside it                 | `renv/library/`     |
++-----------------------------+--------------------------------------------------------------+---------------------+
+| Leading `/`                 | Ignores that directory, anchored at the project root         | `/data/`            |
++-----------------------------+--------------------------------------------------------------+---------------------+
+| `!` at the start of a line  | Exempts from previous rules, except if its parent is ignored | `!data/example.csv` |
++-----------------------------+--------------------------------------------------------------+---------------------+
+
+More rules can be found [here](https://git-scm.com/docs/gitignore).
 
 
 ## README
 
+`README.md`, if present, is rendered on the landing page of your repo. Here is an example from the [PRISMA2020 Flow Diagram GitHub page](https://github.com/prisma-flowdiagram/PRISMA2020). `README.md` should help people understand and use your repo [@githubrepositories]:
 
+- Purpose
+- Motivation
+- How to get started
+- Where to get help
+- Who maintains and contributes the project
+
+`.md` means that `README.md` is a Markdown file. We will explore the syntax for Markdown more in the [next chapter](06_markup.qmd#markdown).
 
 
 ## LICENSE
 
+Making your repo public lets others view and fork it, but without a license, you retain all rights to your project ("all rights reserved"), preventing reuse. Use [this guide](https://choosealicense.com/) to help find an appropriate license.
 
+Your project may have dependencies, which themselves have licenses. Note the difference:
+
+- **Copyright:** a legal right typically held by the author/contributors (being open source does not "give up" copyright -- you are just granting permission via the license)
+- **Copyleft:** a condition that requires derived works to be licensed under the same or compatible license (if none is specified, then there is no obligation)
+
+The MIT License is simple and permissive. By contrast, the GNU GPLv3 license is a strong copyleft license that requires people who distribute your project to keep it free. License conflicts can arise when software with incompatible licenses is combined:
+
+- E.g., combining software under competing copyleft licenses
+- E.g., combining software under non-commercial use into an open source project (this will prevent the project from being used commercially)
+
+. Another example is when non-commercial code is incorporated into open source projects, which prevents the combination from being used commercially.
+
+To add a license to your repo, you can generate one when you first create the repo. Otherwise, you can copy the license into a plain text file called `LICENSE` saved to your project root.
 
 
 ## Revised repo structure
 
+Overall, a typical repo may look like this:
+
+```{.markdown}
+.
+├── analysis/
+├── data/
+├── docs/
+├── output/
+├── renv/              # To be discussed
+├── src/
+├── .Rprofile          # To be discussed
+├── .gitignore
+├── LICENSE
+├── README.md
+├── drugs_canada.RProj
+└── renv.lock          # To be discussed
+```
+
+The ones flagged by `#` will be discussed in a [later chapter on dependency management](08_renv.qmd).
 
 
 ::: {.content-visible when-format="html"}

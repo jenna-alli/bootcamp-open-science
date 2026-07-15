@@ -129,9 +129,11 @@ body {
 }
 
 /* Formatting of in-line images in headings and body */
-#why-r > h2::after,
-#why-rstudio > h2::after,
-#tidyverse > h2::after {
+#github > h2::after,
+#github-copilot > h2::after,
+#git > h2::after,
+#vs-code > h2::after,
+#quarto > h2::after {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -143,17 +145,24 @@ body {
   width: 1.2em;
 }
 
-#why-r > h2::after {
-  background-image: url("assets/images/r_logo.png");
+#github > h2::after {
+  background-image: url("assets/images/github_logo.png");
 }
 
-#why-rstudio > h2::after {
-  background-image: url("assets/images/rstudio_logo.png");
-  width: 2.4em;
+#github-copilot > h2::after {
+  background-image: url("assets/images/github_copilot_logo.png");
 }
 
-#tidyverse > h2::after {
-  background-image: url("assets/images/tidyverse_logo.png");
+#git > h2::after {
+  background-image: url("assets/images/git_logo.png");
+}
+
+#vs-code > h2::after {
+  background-image: url("assets/images/vscode_logo.png");
+}
+
+#quarto > h2::after {
+  background-image: url("assets/images/quarto_logo.png");
 }
 
 .inline-logo {

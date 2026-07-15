@@ -25,7 +25,7 @@ All files are stored as binary digits aka "bits" (sequences of 0's and 1's). How
 
 ## Git
 
-Git is a distributed (lives locally on your computer) **version control system**. You can think of it as a time machine: it takes snapshots of files so that you can track and compare them over time. In a sense, it is similar to the Tracked Changes feature in Microsoft Word, but for entire projects.
+Git is a distributed **version control system**. "Distributed" means that every user has a local copy of the repository. You can think of Git as a time machine: it takes snapshots of files so that you can track and compare them over time. In a sense, it is similar to the Tracked Changes feature in Microsoft Word, but for entire projects.
 
 Git tracks changes in text files and can show you the lines that changed. It can also track changes in binary files, but it cannot easily show you what the particular changes were -- only that *something* changed.
 
