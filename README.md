@@ -9,4 +9,8 @@
 
 **LEARNING OBJECTIVES:**
 
-- 
+- Understand the principles of open science and why reproducible workflows matter.
+- Learn how to organize research projects and code in a clear, shareable structure.
+- Practice using Git and GitHub for version control, collaboration, and project management.
+- Create reproducible documents and presentations with Quarto and lightweight markup.
+- Apply good practices for code editing, environment management, and documentation in data science projects.
