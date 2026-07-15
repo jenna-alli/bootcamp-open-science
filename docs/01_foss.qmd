@@ -1,11 +1,13 @@
 ---
-title: "FOSS"
+title: "Open software"
 ---
 
 <div style="height: 2em;"></div>
 
 
 ## Free and Open Source Software (FOSS)
+
+### Definition 
 
 Open source software is one aspect of open science [@centerforopensciencewhat]. However, open source software is often described in contrast to, and jointly with, free software:
 
@@ -20,7 +22,30 @@ Open source software is one aspect of open science [@centerforopensciencewhat]. 
 	- However, while free software often rejects licenses that impose additional restrictions, open source software can be less stringent by allowing a broader range of licenses (free software is a subset of open source software, though the difference is minimal).
 	- The benefits come from having many eyes on the same project; thousands of developers worldwide contribute ideas (bug reports, bug fixes, optimization, new use cases) with speed and expertise. Linus's law asserts that "given enough eyeballs, all bugs are shallow."
 
-Although there is substantial overlap between these two camps, there has been strong philosophical disagreement between them [@stallman2024why]. **Free and open source software (FOSS)**, also known as free/libre and open source software (FLOSS), takes a middle ground that acknowledges both the ethical/moral aspects and the practical benefits. The opposite of FOSS is **proprietary (closed-source) software**.
+Although there is substantial overlap between these two camps, there has been strong philosophical disagreement between them [@stallman2024why]. **Free and open source software (FOSS)**, also known as free/libre and open source software (FLOSS), takes a middle ground that acknowledges both the ethical/moral aspects and the practical benefits. The opposite of FOSS is **proprietary (closed-source) software**, where the source code remains private and only the compiled program is distributed.
+
+### History [@opensauced2025what]
+
+::: {.timeline}
+- **1983** Richard Stallman announces the GNU project to design a "free" alternative to the Unix operating system.
+- **1985** Richard Stallman founds the Free Software Foundation (FSF), which set the definition of free software.
+- **1991** Linus Torvalds developed an open source kernel, Linux, that -- when combined with the GNU system -- formed the Linux operating system that is so widely popular today (more [below](01_foss.qmd#examples)). This helped propel the open source movement.
+- **1998** Christine Peterson coined the term "open source software." She and others created The Open Source Initiative (OSI) to raise awareness.
+- **2008** GitHub was founded to facilitate FOSS projects, though GitHub itself is proprietary software.
+- **2011** GitLab was founded as a FOSS alternative to GitHub.
+:::
+
+### FOSS for researchers
+
+Although some researchers contribute to the *development* of software packages and apps, most do not. More commonly, researchers write and share analysis code for individual projects. Regardless, nearly all researchers are *consumers* of software and rely heavily on FOSS tools. You use R. You use the Tidyverse. You use sample size calculators. In other words, researchers can benefit from the FOSS ecosystem, including [@opensauced2025what]:
+
+- Learning best practices
+- Accessing educational resources
+- Gaining exposure to diverse perspectives
+- Staying at the forefront of innovation (rather than the meta)
+- Building a public portfolio of your work
+
+Further, researchers do not have to write code to contribute to FOSS. You can also support documentation, user experience (UX) design, graphic design, translation, and community engagement [@opensauced2025what].
 
 
 ## Disadvantages
@@ -33,7 +58,7 @@ The open source movement is not a single project, but an ecosystem of thousands 
 
 ### Licensing
 
-The most widely used FOSS license is the MIT license. It is popular because it is simple with only two conditions:
+For software to be FOSS, it must be released under a free or open source license. The most widely used FOSS license is the MIT license. It is popular because it is simple with only two conditions:
 
 ```text
 Copyright (c) [Year] [Original Author]
@@ -57,7 +82,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-But not all licenses are so permissive. We will discuss licenses more [later](04_repo_structure.qmd#license), but besides **copyright licenses** that govern how software can be used, modified, or distributed, there are also **copyleft licenses** that require derivative works to be released under the same terms. For example, if a copyleft license requires continued openness, this may be problematic if you want to develop a proprietary product.
+There are many FOSS licenses that differ in terms and conditions. Not all licenses are as permissive as the MIT license. We will discuss licenses more [later](05_repo_structure.qmd#license), but besides **copyright licenses** that govern how software can be used, modified, or distributed, there are also **copyleft licenses** that require derivative works to be released under the same terms. For example, if a copyleft license requires continued openness, this may be problematic if you want to develop a proprietary product.
 
 Another challenge arises when you combine open source software that have different licenses. **License conflicts** occurs when the licenses impose incompatible requirements, making it impossible to satisfy the terms of all of them simultaneously.
 
@@ -70,7 +95,7 @@ The most widely used operating system across devices is Android (~40% of global 
 
 Similarly, Microsoft's Visual Studio (VS) Code is proprietary, but it's built on FOSS called [Code-OSS](https://github.com/microsoft/vscode). Code-OSS has been forked to create other editors, including Cursor and Positron.
 
-[R](https://www.ebsco.com/research-starters/computer-science/r-programming-language), [RStudio](https://posit.co/products/open-source/rstudio), [Python](https://www.python.org/about/), [Git](https://git-scm.com/), [Quarto](https://github.com/quarto-dev), and [Zotero](https://github.com/zotero/zotero) are all FOSS.
+[R](https://www.ebsco.com/research-starters/computer-science/r-programming-language), [RStudio](https://posit.co/products/open-source/rstudio), [Python](https://www.python.org/about/), [Git](https://git-scm.com/), [Quarto](https://github.com/quarto-dev), [Open Science Framework](https://github.com/centerforopenscience), [Zenodo](https://github.com/zenodo/zenodo), and [Zotero](https://github.com/zotero/zotero) are all FOSS.
 
 
 ## Why companies might release FOSS

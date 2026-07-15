@@ -1,18 +1,17 @@
 ---
-title: "Repo structure"
+title: "Quarto"
 ---
 
 <div style="height: 2em;"></div>
 
 
-## README.md
+## Literate programming
 
 
-## LICENSE
+## Quarto
 
 
-## Revised repo structure
-
+## For researchers
 
 
 ::: {.content-visible when-format="html"}

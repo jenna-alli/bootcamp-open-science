@@ -1,14 +1,20 @@
 ---
-title: "Quarto"
+title: "Dependencies"
 ---
 
 <div style="height: 2em;"></div>
 
 
-## Quarto
+## `renv`
 
 
-## For researchers
+## Setup
+
+
+## Wrapping up
+
+
+## Restoration
 
 
 ::: {.content-visible when-format="html"}

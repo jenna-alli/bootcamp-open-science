@@ -5,12 +5,13 @@ project:
     - index.qmd
     - 01_foss.qmd
     - 02_open_science.qmd
-    - 03_git.qmd
-    - 04_repo_structure.qmd
-    - 05_markup.qmd
-    - 06_quarto.qmd
-    - 07_renv.qmd
-    - 08_readings.qmd
+    - 03_code_editing.qmd
+    - 04_github.qmd
+    - 05_repo_structure.qmd
+    - 06_markup.qmd
+    - 07_quarto.qmd
+    - 08_renv.qmd
+    - 09_readings.qmd
 
 book:
   title: "DATA SCIENCE BOOTCAMP 2026"
@@ -26,12 +27,13 @@ book:
     - index.qmd
     - 01_foss.qmd
     - 02_open_science.qmd
-    - 03_git.qmd
-    - 04_repo_structure.qmd
-    - 05_markup.qmd
-    - 06_quarto.qmd
-    - 07_renv.qmd
-    - 08_readings.qmd
+    - 03_code_editing.qmd
+    - 04_github.qmd
+    - 05_repo_structure.qmd
+    - 06_markup.qmd
+    - 07_quarto.qmd
+    - 08_renv.qmd
+    - 09_readings.qmd
   sidebar:
     title: "Bootcamp Part 2: Open Science"
     style: docked

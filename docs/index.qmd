@@ -55,17 +55,23 @@ The field of pharmacoepidemiology has been pushing for transparency and reproduc
 4. Code and supporting material (e.g., algorithms, codelists, data dictionaries, forms) are available (including for analyses, tables, and figures)
 5. Manuscript follows the appropriate reporting checklist (e.g., STROBE, RECORD-PE)
 
+And in terms of reproducibility, there are many potential threats to scientific rigour:
+
+![Potential threats to the scientific method (HARKing stands for hypothesizing after the results are known) [@munafo2017manifesto]](assets/images/nature-s415620160021-fig-001.png)
+
+Something as simple as badges [@kidwell2016badges] can encourage data sharing and thus transparency and reproducibility. The International Society for Pharmacoepidemiology (ISPE) now encourages the display of Open Science Badges on publications and conference presentations [@wang2024building; @blohowiak2013badges].
+
 Tazare *et al.* [@tazare2024sharing] reviewed all studies published in the *Pharmacoepidemiology and Drug Safety (PDS)* journal between 2017 and 2022 to see how frequently code was shared. They found that code sharing was low, but increased from 1.8% in 2017 to 9.5% in 2022. 
 
 ![Proportion of articles sharing programming code over time [@tazare2024sharing]](assets/images/pds5856-fig-0002-m.jpg){width=600px}
 
 ![Proportion of articles following other transparency practices. (A) Data sharing, (B) Codelist sharing (at least one), (C) Preregistration, and (D) Reported adherence to a reporting guideline. [@tazare2024sharing]](assets/images/pds5856-fig-0003-m.jpg){width=600px}
 
-Code sharing has many advantages, including facilitating replication and reuse, detecting errors and misconduct, encouraging documentation, and promoting trust. Nonetheless, code sharing also has barriers. Privacy is a major concern, but another is protecting intellectual property rights. Strategies to address this include licensing, graphical study design diagrams, and pseudocode [@tazare2024sharing]. *Where* authors share code is also important. Most of the studies that shared code did so as supplementary information [@tazare2024sharing]. This can be challenging to discover and read - not just for humans but also for machines -- barriers for findability and reusability.
+Code sharing has many advantages, including facilitating replication and reuse, detecting errors and misconduct, encouraging documentation, and promoting trust. Nonetheless, code sharing also has barriers. Privacy is a major concern, but another is protecting intellectual property rights. Strategies to address this include licensing, graphical study design diagrams, and pseudocode [@tazare2024sharing]. *Where* authors share code is also important. Most studies that shared code did so as supplementary material [@tazare2024sharing]. However, this is difficult to discover, not indexed in search engines, does not support complex filing structures, and requires copy-pasting [@weberpals2025lets].
 
 ![Location of code, when shared [@tazare2024sharing]](assets/images/pds5856-fig-0001-m.jpg){width=600px}
 
-There are many other aspects of open science, including preprints, registered protocols, open access, open evaluation, corrections, and inclusivity [@centerforopensciencewhat]. In this session, we will focus on the technical aspects of open science. While there are many ways to implement these practices (e.g., GitHub vs. GitLab, Quarto vs. R Markdown, GUI vs. CLI), the tools and workflows presented here represent one opinionated approach chosen for their simplicity and ease of adoption.
+There are many other aspects of [open science](02_open_science.qmd) [@centerforopensciencewhat]. For this session, we will only focus on the technical aspects of open science. While there are many ways to implement these practices (e.g., GitHub vs. GitLab, Quarto vs. R Markdown, GUI vs. CLI), the tools and workflows presented here represent one opinionated approach chosen for their simplicity and ease of adoption.
 
 
 ## Declaration of generative AI and AI-assisted technologies

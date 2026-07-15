@@ -1,20 +1,22 @@
 ---
-title: "Dependency management"
+title: "Repo structure"
 ---
 
 <div style="height: 2em;"></div>
 
 
-## `renv`
+## README.md
 
 
-## Setup
 
 
-## Wrapping up
+## LICENSE
 
 
-## Restoration
+
+
+## Revised repo structure
+
 
 
 ::: {.content-visible when-format="html"}

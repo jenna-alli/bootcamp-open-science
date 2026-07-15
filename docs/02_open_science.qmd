@@ -7,11 +7,34 @@ title: "Open science"
 
 ## Principles
 
+Open science is a set of principles and practices that span the entire research process, with the goal of making scientific knowledge available, accessible, and reusable.
+
+![Open science principles throughout the research process [@centerforopensciencewhat]](assets/images/lifecycle-practices.png)
+
+[Previously](index.qmd#motivation), we introduced the concepts of transparency, reproducibility, and accessibility. These are just three of the many principles outlined in the UNESCO Recommendation on Open Science, which also emphasizes equity, inclusivity, and sustainability [@unesco2021recommendation]. In this book, we focus on the practical implementation of open science through open data, open code, open materials, and open notebooks.
+
+Despite this movement, open science is not routine in practice. Some of that may be due to familiarity with platforms like GitHub, Open Science Framework (OSF), and Zenodo [@tazare2024sharing].
 
 
-## Research repositories
+## Digital repositories for research
 
+Although platforms like GitHub can handle version control, they are geared towards active project development. Research platforms like OSF (US-based) and Zenodo (EU-based) are geared for long-term archive and citation. They assign immuatable digital object identifiers (DOI) to snapshots of data, documents, software releases, and so on. You may have already used these repositories [before](https://osf.io/pwrn5/overview) for your research.
 
+::: {.content-visible when-format="html"}
+<div class="repository-logos">
+  <img src="assets/images/osf_logo.png" alt="Open Science Framework logo">
+  <img src="assets/images/zenodo_logo.png" alt="Zenodo logo">
+</div>
+:::
+
+::: {.content-visible when-format="pdf"}
+\begin{center}
+\includegraphics[height=0.8in]{assets/images/osf_logo.png}\hspace{1in}
+\includegraphics[height=0.8in]{assets/images/zenodo_logo.png}
+\end{center}
+:::
+
+It is fairly straightforward to link your GitHub account to OSF and Zenodo to archive a snapshot your codebase. For example, the PRISMA 2020 flow diagram Shiny app has an [actively maintained GitHub page](https://github.com/prisma-flowdiagram/PRISMA2020) that is also [archived in Zenodo](https://zenodo.org/records/11429174).
 
 
 ::: {.content-visible when-format="html"}
