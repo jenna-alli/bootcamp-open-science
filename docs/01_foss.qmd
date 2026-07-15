@@ -1,0 +1,124 @@
+---
+title: "Open software"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Free and Open Source Software (FOSS)
+
+### Definition 
+
+Open source software is one aspect of open science [@centerforopensciencewhat]. However, open source software is often described in contrast to, and jointly with, free software:
+
+- **The free software definition** focuses on the ethical and moral aspects of software freedom. The *four essential freedoms* are considered fundamental rights (notice "free" is not refering to price) [@gnuproject2026what]:
+	1. Freedom to run without restrictions
+	2. Freedom to study/modify the source code
+	3. Freedom to distribute copies
+	4. Freedom to distribute modified versions
+
+- **The open source definition** focuses on the practical benefits of an open development model (e.g., quality, security, innovation) [@opensourceinitiative2007open]:
+	- Its criteria overlap substantially with the free software definition.
+	- However, while free software often rejects licenses that impose additional restrictions, open source software can be less stringent by allowing a broader range of licenses (free software is a subset of open source software, though the difference is minimal).
+	- The benefits come from having many eyes on the same project; thousands of developers worldwide contribute ideas (bug reports, bug fixes, optimization, new use cases) with speed and expertise. Linus's law asserts that "given enough eyeballs, all bugs are shallow."
+
+Although there is substantial overlap between these two camps, there has been strong philosophical disagreement between them [@stallman2024why]. **Free and open source software (FOSS)**, also known as free/libre and open source software (FLOSS), takes a middle ground that acknowledges both the ethical/moral aspects and the practical benefits. The opposite of FOSS is **proprietary (closed-source) software**, where the source code remains private and only the compiled program is distributed.
+
+### History [@opensauced2025what]
+
+::: {.timeline}
+- **1983** Richard Stallman announces the GNU project to design a "free" alternative to the Unix operating system.
+- **1985** Richard Stallman founds the Free Software Foundation (FSF), which set the definition of free software.
+- **1991** Linus Torvalds developed an open source kernel, Linux, that -- when combined with the GNU system -- formed the Linux operating system that is so widely popular today (more [below](01_foss.qmd#examples)). This helped propel the open source movement.
+- **1998** Christine Peterson coined the term "open source software." She and others created The Open Source Initiative (OSI) to raise awareness.
+- **2008** GitHub was founded to facilitate FOSS projects, though GitHub itself is proprietary software.
+- **2011** GitLab was founded as a FOSS alternative to GitHub.
+:::
+
+### FOSS for researchers
+
+Although some researchers contribute to the *development* of software packages and apps, most do not. More commonly, researchers write and share analysis code for individual projects. Regardless, nearly all researchers are *consumers* of software and rely heavily on FOSS tools. You use R. You use the Tidyverse. You use sample size calculators. In other words, researchers can benefit from the FOSS ecosystem, including [@opensauced2025what]:
+
+- Learning best practices
+- Accessing educational resources
+- Gaining exposure to diverse perspectives
+- Staying at the forefront of innovation (rather than the meta)
+- Building a public portfolio of your work
+
+Further, researchers do not have to write code to contribute to FOSS. You can also support documentation, user experience (UX) design, graphic design, translation, and community engagement [@opensauced2025what].
+
+
+## Disadvantages
+
+### Dependencies
+
+The open source movement is not a single project, but an ecosystem of thousands of tools and libraries, many of which are maintained by volunteers who ensure compatibility with evolving hardware and software. Over time, widely adopted projects become foundational components of the software ecosystem. While this collaborative model has many strengths, it also creates critical dependencies: if a widely used project is abandoned or compromised, the consequences can be far-reaching, as illustrated by the [XZ Utils backdoor incident](https://www.youtube.com/watch?v=aoag03mSuXQ).
+
+![Critical dependencies [@xkcddependency]](assets/images/dependency.png){width=400px}
+
+### Licensing
+
+For software to be FOSS, it must be released under a free or open source license. The most widely used FOSS license is the MIT license. It is popular because it is simple with only two conditions:
+
+```text
+Copyright (c) [Year] [Original Author]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+There are many FOSS licenses that differ in terms and conditions. Not all licenses are as permissive as the MIT license. We will discuss licenses more [later](05_repo_structure.qmd#license), but besides **copyright licenses** that govern how software can be used, modified, or distributed, there are also **copyleft licenses** that require derivative works to be released under the same terms. For example, if a copyleft license requires continued openness, this may be problematic if you want to develop a proprietary product.
+
+Another challenge arises when you combine open source software that have different licenses. **License conflicts** occurs when the licenses impose incompatible requirements, making it impossible to satisfy the terms of all of them simultaneously.
+
+
+## Examples
+
+The most widely used operating system across devices is Android (~40% of global usage share), which is built on the [Android Open Source Project](https://github.com/aosp-mirror) (FOSS), which in turn is built on the [Linux kernel](https://github.com/torvalds/linux) (also FOSS). Linux not only powers computers but also many other electronic devices, including smartwatches, TVs, cameras, vacuum cleaners, and cars, because Linux is highly customizable. Many security-sensitive systems (governments, defence organizations, health organizations like ICES[@schull2020ices]) run Linux servers for its auditability and control. In fact, more than 96.3% of the world's top 1 million web servers run Linux-based operating systems due to their stability, security, performance, and compatibility.[@marketgrowthreports2025linux]
+
+[Firefox](https://github.com/mozilla-firefox/firefox) is FOSS. And although Google Chrome is a proprietary web browser, it is built on FOSS called [Chromium](https://github.com/chromium/chromium). Chromium has also been forked to create several other browsers, including Microsoft Edge, Opera, and Brave.
+
+Similarly, Microsoft's Visual Studio (VS) Code is proprietary, but it's built on FOSS called [Code-OSS](https://github.com/microsoft/vscode). Code-OSS has been forked to create other editors, including Cursor and Positron.
+
+[R](https://www.ebsco.com/research-starters/computer-science/r-programming-language), [RStudio](https://posit.co/products/open-source/rstudio), [Python](https://www.python.org/about/), [Git](https://git-scm.com/), [Quarto](https://github.com/quarto-dev), [Open Science Framework](https://github.com/centerforopenscience), [Zenodo](https://github.com/zenodo/zenodo), and [Zotero](https://github.com/zotero/zotero) are all FOSS.
+
+
+## Why companies might release FOSS
+
+Not all FOSS is developed by volunteers. It may come as a surprise that many companies also release FOSS, even though it can benefit competitors (e.g., Microsoft Edge is built on Chromium) and requires ongoing investment to maintain. First, open source projects often form the foundation of companies' own proprietary products, so maintaining the FOSS also means maintaining the proprietary product. Second, the FOSS on its own is often not a direct competitor because it lacks some key or premium/enterprise proprietary features.
+
+Besides the technical benefits of FOSS mentioned earlier, companies may also have strategic business reasons for releasing FOSS:
+
+- It increases adoption
+- It builds reputation and trust (a form of marketing)
+- It encourages ecosystem adoption by establishing frameworks and standards that others build on (e.g., Microsoft VS Code integrates well with GitHub and Azure)
+- It creates a pathway to optional paid features (e.g., cloud hosting, storage, backup)
+
+
+## Commercializing FOSS
+
+On that note, FOSS can be commercialized! Remember, the word "free" is used in the sense of "free speech" - not "free beer". The criteria for FOSS do not prevent the software from being commercialized. Some ways to do so, besides the ones mentioned [above](01_foss.qmd#why-companies-might-release-foss), include [@gaudin2023lets]:
+
+- **Support services**: charge for expertise (e.g., training, assistance)
+- **Sponsorships**: some programs (e.g., GitHub Sponsors) allow users to pay back the developers (similar idea to Patreon for content creators)
+- **Dual licensing**: software is available under an open source license for community users, but also a proprietary license for companies who want to bypass the open-source requirements
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

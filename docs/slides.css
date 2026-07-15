@@ -1,0 +1,222 @@
+:root {
+  /* Match the book's typography; Reveal otherwise supplies its theme fonts. */
+  --bootcamp-font: -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --bootcamp-blue: #2364aa;
+  --bootcamp-navy: #17324d;
+  --bootcamp-pale: #edf4ff;
+  --bootcamp-teal: #2a9d8f;
+  --bootcamp-warm: #f4a261;
+  --r-main-font: var(--bootcamp-font);
+  --r-heading-font: var(--bootcamp-font);
+  --r-main-font-size: 36px;
+  --r-main-color: #1f2933;
+  --r-heading-color: #17324d;
+  --r-heading-font-weight: 750;
+  --r-heading-text-transform: none;
+  --r-heading-letter-spacing: -0.025em;
+}
+
+.reveal {
+  color: var(--r-main-color);
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  color: var(--bootcamp-navy);
+  letter-spacing: -0.025em;
+  text-transform: none;
+}
+
+.reveal h1 {
+  font-size: 2.25em;
+}
+
+.reveal h2 {
+  border-bottom: 0.12em solid var(--bootcamp-blue);
+  font-size: 1.55em;
+  padding-bottom: 0.15em;
+}
+
+.reveal h3 {
+  color: var(--bootcamp-blue);
+  font-size: 1.05em;
+}
+
+.reveal p,
+.reveal li {
+  line-height: 1.4;
+}
+
+.reveal strong {
+  color: var(--bootcamp-navy);
+}
+
+.reveal code {
+  color: #8d2b3d;
+}
+
+.reveal pre code {
+  line-height: 1.25;
+  max-height: 490px;
+  padding: 0.8em;
+}
+
+.reveal blockquote {
+  background: var(--bootcamp-pale);
+  border-left: 0.28em solid var(--bootcamp-blue);
+  box-shadow: none;
+  color: var(--r-main-color);
+  font-style: normal;
+  margin: 1em 0;
+  padding: 0.65em 1em;
+  width: auto;
+}
+
+.reveal .callout {
+  font-size: 0.82em;
+}
+
+.reveal .slide-logo {
+  max-height: 64px !important;
+}
+
+.reveal .footer {
+  color: #5f6b76;
+  font-size: 0.42em;
+}
+
+.reveal .slide-number {
+  color: var(--bootcamp-blue);
+  font-size: 0.5em;
+}
+
+.reveal table {
+  font-size: 0.68em;
+  margin: 0.6em auto;
+}
+
+.reveal table th {
+  background: var(--bootcamp-navy);
+  color: white;
+}
+
+.reveal table td,
+.reveal table th {
+  padding: 0.4em 0.6em;
+}
+
+.reveal .columns {
+  gap: 1.25em;
+}
+
+.reveal .compact {
+  font-size: 0.8em;
+}
+
+.reveal .key-point {
+  background: var(--bootcamp-pale);
+  border-radius: 0.35em;
+  box-shadow: 0.2em 0.24em 0 #c7daf2;
+  padding: 0.65em 0.85em;
+}
+
+.reveal .accent {
+  color: var(--bootcamp-blue);
+  font-weight: 700;
+}
+
+.reveal .citation {
+  font-size: 0.72em;
+}
+
+.reveal .slide > p.caption {
+  text-align: center;
+}
+
+.reveal section#refs {
+  columns: initial;
+}
+
+.reveal section#refs > .references {
+  column-count: 1;
+  column-gap: normal;
+  font-size: 0.55em;
+  line-height: 1.25;
+}
+
+.reveal section#refs .csl-entry {
+  break-inside: avoid;
+  margin-bottom: 0.8em;
+}
+
+.reveal .progress {
+  color: var(--bootcamp-blue);
+}
+
+.reveal section.title-slide {
+  text-align: left;
+}
+
+.reveal section.title-slide h1 {
+  color: var(--bootcamp-navy);
+  max-width: 9em;
+}
+
+.reveal #title-slide .subtitle {
+  color: var(--bootcamp-navy);
+  font-size: 1.4em;
+  font-weight: 750;
+}
+
+.reveal .rstudio-pane-cycle {
+  aspect-ratio: 1.88;
+  margin: 0 auto;
+  position: relative;
+  width: 80%;
+}
+
+.reveal .rstudio-pane-cycle img {
+  display: block;
+  height: 100%;
+  left: 0;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.reveal .project-tree-column {
+  margin-top: 3em;
+}
+
+.reveal .slide-divider {
+  border: 0;
+  border-top: 2px solid var(--bootcamp-blue);
+  margin: 0.8em 0;
+}
+
+.reveal .file-type-icons {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 0.6em;
+}
+
+.reveal .file-type-icon {
+  display: flex;
+  flex: 1 1 0;
+  justify-content: center;
+}
+
+.reveal .file-type-icons img {
+  height: 2.4em;
+  max-width: 80%;
+  object-fit: contain;
+}

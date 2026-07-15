@@ -1,0 +1,73 @@
+project:
+  type: book
+  output-dir: _book
+  render:
+    - index.qmd
+    - 01_foss.qmd
+    - 02_open_science.qmd
+    - 03_code_editing.qmd
+    - 04_github.qmd
+    - 05_repo_structure.qmd
+    - 06_markup.qmd
+    - 07_quarto.qmd
+    - 08_renv.qmd
+    - 09_readings.qmd
+
+book:
+  title: "DATA SCIENCE BOOTCAMP 2026"
+  subtitle: "Part 2: Open Science"
+  output-file: bootcamp-open-science
+  repo-url: https://github.com/Data-Science-Bootcamp-2026/bootcamp-open-science
+  repo-actions:
+    - issue
+  downloads:
+    - pdf
+  page-navigation: true
+  chapters:
+    - index.qmd
+    - 01_foss.qmd
+    - 02_open_science.qmd
+    - 03_code_editing.qmd
+    - 04_github.qmd
+    - 05_repo_structure.qmd
+    - 06_markup.qmd
+    - 07_quarto.qmd
+    - 08_renv.qmd
+    - 09_readings.qmd
+  sidebar:
+    title: "Bootcamp Part 2: Open Science"
+    style: docked
+    search: true
+    tools:
+      - icon: easel
+        text: "Presentation slides"
+        href: slides.pdf
+
+bibliography: references.bib
+csl: american-medical-association.csl
+notes-after-punctuation: true
+
+format:
+  html:
+    theme:
+      light: litera
+      dark: darkly
+    css: styles.css
+    link-citations: true
+    number-sections: true
+    toc: true
+    toc-depth: 3
+    page-layout: article
+    link-external-newwindow: true
+  pdf:
+    filters:
+      - pdf-readings-references.lua
+    documentclass: scrreprt
+    number-sections: true
+    toc: true
+    geometry:
+      - top=0.9in
+      - bottom=0.9in
+      - left=0.9in
+      - right=0.9in
+      - footskip=0.32in

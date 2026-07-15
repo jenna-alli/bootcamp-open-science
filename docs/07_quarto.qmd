@@ -1,0 +1,19 @@
+---
+title: "Quarto"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Literate programming
+
+
+## Quarto
+
+
+## For researchers
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

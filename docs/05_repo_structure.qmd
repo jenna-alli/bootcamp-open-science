@@ -1,0 +1,28 @@
+---
+title: "Repo structure"
+---
+
+<div style="height: 2em;"></div>
+
+
+## `.gitignore`
+
+
+
+## README
+
+
+
+
+## LICENSE
+
+
+
+
+## Revised repo structure
+
+
+
+::: {.content-visible when-format="html"}
+## References
+:::

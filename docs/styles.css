@@ -1,0 +1,221 @@
+:root {
+  --bs-body-font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+#quarto-document-content p {
+  text-wrap: pretty;
+}
+
+@media (min-width: 1400px) {
+  body.docked #quarto-content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: min(1600px, calc(100vw - 2rem));
+    width: fit-content;
+  }
+}
+
+#quarto-margin-sidebar {
+  background: var(--quarto-scss-export-sidebar-bg, var(--bs-tertiary-bg));
+  border-left: 1px solid var(--bs-border-color);
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#quarto-document-content,
+#quarto-document-content p,
+#quarto-document-content li,
+#quarto-document-content td,
+#quarto-document-content th,
+#quarto-document-content blockquote {
+  font-family: var(--bs-body-font-family);
+}
+
+.quarto-title-block .title,
+.landing-title > h1,
+.landing-title > h1 > .header-section-number {
+  font-size: 2rem;
+  font-weight: 750;
+  line-height: 1;
+  color: inherit;
+}
+
+.landing-title > h1 > .header-section-number {
+  margin-right: 0.35rem;
+}
+
+#TOC > ul > li > a[data-scroll-target="#welcome"] {
+  display: none;
+}
+
+#TOC > ul > li > a[data-scroll-target="#welcome"] + ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#quarto-document-content .quarto-figure figcaption {
+  text-align: center;
+}
+
+/* Repository logos: HTML counterpart to the equal-height PDF images. */
+#quarto-document-content .repository-logos {
+  align-items: center;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  margin: 1.5rem auto;
+}
+
+#quarto-document-content .repository-logos img {
+  height: 4rem;
+  max-width: calc(50% - 1.25rem);
+  object-fit: contain;
+  width: auto;
+}
+
+/* Timeline: CSS enhances the semantic list in HTML; PDF keeps the readable list. */
+#quarto-document-content .timeline > ul {
+  list-style: none;
+  margin: 1.5rem 0 2rem;
+  padding-left: 0;
+  position: relative;
+}
+
+#quarto-document-content .timeline > ul::before {
+  background: var(--bs-primary);
+  border-radius: 1rem;
+  bottom: 1rem;
+  content: "";
+  left: 0.75rem;
+  position: absolute;
+  top: 0.8rem;
+  transform: translateX(-50%);
+  width: 3px;
+}
+
+#quarto-document-content .timeline > ul > li {
+  margin: 0;
+  padding: 0 0 1.25rem 2.25rem;
+  position: relative;
+}
+
+#quarto-document-content .timeline > ul > li:last-child {
+  padding-bottom: 0;
+}
+
+#quarto-document-content .timeline > ul > li::before {
+  background: var(--bs-body-bg);
+  border: 3px solid var(--bs-primary);
+  border-radius: 50%;
+  content: "";
+  height: 1rem;
+  left: 0.25rem;
+  position: absolute;
+  top: 0.45rem;
+  width: 1rem;
+}
+
+#quarto-document-content .timeline strong {
+  color: var(--bs-primary);
+  display: block;
+  font-size: 0.9em;
+  letter-spacing: 0.04em;
+}
+
+/* Formatting of in-line images in headings and body */
+#why-r > h2::after,
+#why-rstudio > h2::after,
+#tidyverse > h2::after {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 1.2em;
+  margin-left: -1rem;
+  vertical-align: -0.2em;
+  width: 1.2em;
+}
+
+#why-r > h2::after {
+  background-image: url("assets/images/r_logo.png");
+}
+
+#why-rstudio > h2::after {
+  background-image: url("assets/images/rstudio_logo.png");
+  width: 2.4em;
+}
+
+#tidyverse > h2::after {
+  background-image: url("assets/images/tidyverse_logo.png");
+}
+
+.inline-logo {
+  height: 1em;
+  margin-left: 0.5em;
+}
+
+/* Code-cell input and output blocks */
+#quarto-document-content div.sourceCode {
+  background: #f1f3f5;
+  border-radius: 0.45rem;
+  box-shadow: 6px 7px 0 #cfd7df;
+  margin-bottom: 1.75rem;
+  margin-top: 1.25rem;
+  overflow-x: auto;
+}
+
+#quarto-document-content div.sourceCode pre.sourceCode {
+  background: transparent;
+  border: 0;
+  border-radius: inherit;
+  margin: 0;
+  padding: 1rem 1.25rem;
+}
+
+#quarto-document-content .cell-output {
+  background: #edf4ff;
+  border-radius: 0.45rem;
+  box-shadow: 6px 7px 0 #bbd5ff;
+  margin-bottom: 1.75rem;
+  overflow-x: auto;
+}
+
+#quarto-document-content .cell-output pre {
+  background: transparent;
+  border: 0;
+  border-radius: inherit;
+  margin: 0;
+  padding: 1rem 1.25rem;
+}
+
+/* Keep numbered references aligned in both the bibliography and citation preview. */
+.csl-entry:has(> .csl-left-margin) {
+  column-gap: 0;
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+}
+
+.hanging-indent.csl-entry,
+.hanging-indent .csl-entry {
+  margin-left: 0;
+  text-indent: 0;
+}
+
+.csl-entry > .csl-left-margin {
+  float: none;
+  min-width: 0;
+}
+
+.csl-entry > .csl-right-inline {
+  margin-left: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding-left: 0;
+}

@@ -1,0 +1,71 @@
+---
+title: "Code editing"
+---
+
+<div style="height: 2em;"></div>
+
+
+## Types of files
+
+All files are stored as binary digits aka "bits" (sequences of 0's and 1's). However, it is useful to make a higher-level distinction between **text files** and **binary files** to describe how that file is interpreted by humans and software:
+
++-----------------+------------------------------------------------------------------+--------------------------------------------+
+| Type of file    | Purpose                                                          | Examples                                   |
++=================+==================================================================+============================================+
+| **Text file**   | - Conform to some character encoding (e.g., ASCII, UTF-8) that   | - Code (`.R`, `.py`)\                      |
+|                 |   is human-readable\                                             | - Markup (`.md`, `.txt`, `.html`, `.xml`)\ |
+|                 | - Because they are sufficiently simple, many different programs  | - Configuration (`.yaml`, `.json`)         |
+|                 |   can display them correctly                                     |                                            |
++-----------------+------------------------------------------------------------------+--------------------------------------------+
+| **Binary file** | - Not intended to be interpreted as simple text\                 | - Images and other media\                  |
+|                 | - Require specific software to view (e.g., PDF viewer, image     | - Documents (`.pdf`)\                      |
+|                 |   editor); if opened in a text editor, it will appear unreadable | - Executables                              |
++-----------------+------------------------------------------------------------------+--------------------------------------------+
+
+
+## Git
+
+Git is a distributed (lives locally on your computer) **version control system**. You can think of it as a time machine: it takes snapshots of files so that you can track and compare them over time. In a sense, it is similar to the Tracked Changes feature in Microsoft Word, but for entire projects.
+
+Git tracks changes in text files and can show you the lines that changed. It can also track changes in binary files, but it cannot easily show you what the particular changes were -- only that *something* changed.
+
+Without Git, your file changes may look like this:
+
+- `script.R`
+- `script_draft1.R`
+- `script_20260715.R`
+- `script_final.R`
+
+And comments and suggestions on your code may look like this:
+
+- `# Alice: Consider using read_csv() instead of read.csv().`
+- `# Bob: Okay, I will change it.`
+
+With Git, you get a single file (e.g., `script.R`) with snapshots taken over time. When integrated with a system like GitHub, you can also leave line comments.
+
+Besides version control, Git is also useful for **sharing and collaboration** -- including asymmetrically, where some people write code while others only read or review. For example, suppose you send your manuscript to co-authors to review via OneDrive or Google Drive. These shared drives are helpful because they can track who makes changes. However, suppose your co-authors make edits in parallel, simultaneously, to the same line. Whose version is "correct"? The shared drive may be inadequate here.
+
+
+## VS Code
+
+VS Code (Microsoft) and RStudio (Posit) are both development environemnts that include a text editor and terminal, but they are designed with different priorities. I often keep both open at the same time.
+
+VS Code:
+
+- Has a much larger extension ecosystem, including support for many AI coding assistants such as GitHub Copilot, OpenAI Codex, and Claude Code. RStudio only has Posit AI.
+- Has stronger Git and GitHub integration. RStudio is clunkier [@bryanhappy]. There are other way to interface with Git and GitHub too, such as GitHub Desktop.
+
+RStudio:
+
+- Provides a polished interactive experience, including the familiar 4-pane layout with a Console and Environment pane. VS Code has clunkier substitutes.
+- This is desirable for data science, as you would usually explore, clean, and analyze data repeatedly.
+
+Posit (the company behind RStudio) has also released [Positron](https://posit.co/blog/positron-product-announcement-aug-2025), a fork of VS Code[^1] but adapted to the familiar RStudio panes.
+
+
+::: {.content-visible when-format="html"}
+## References
+:::
+
+
+[^1]: Technically a Code-OSS fork.

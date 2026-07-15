@@ -1,0 +1,758 @@
+---
+title: "DATA SCIENCE BOOTCAMP 2026"
+subtitle: "PART 1: R"
+author:
+  - name: Martin Ho
+    email: martinkh.ho@mail.utoronto.ca
+date: "2026-07-15"
+date-format: long
+bibliography: references.bib
+csl: american-medical-association.csl
+notes-after-punctuation: true
+format:
+  revealjs:
+    theme: solarized
+    css: slides.css
+    chalkboard: true
+    width: 1280
+    height: 720
+    margin: 0.08
+    transition: fade
+    slide-number: c/t
+    show-slide-number: all
+    navigation-mode: linear
+    controls: true
+    controls-auto: false
+    controls-layout: edges
+    link-external-newwindow: true
+    footer: "Data Science Bootcamp 2026 · Part 1: R"
+    logo: assets/images/r_logo.png
+---
+
+
+## What you will learn
+
+By the end of this session, you should be able to:
+
+- Explain why code improves **reproducibility**
+- Navigate **RStudio** and organize work with an **R project**
+- Distinguish types, classes, and data structures
+- Read and write basic R code using conditions, loops, and functions
+
+
+## Declaration of AI-assisted technologies
+
+All instructional material in this presentation was written by the author. OpenAI Codex (GPT-5.6-Sol, reasoning: extra high) helped proofread and format the slide deck. The author reviewed, edited, and verified the suggestions as needed and takes full responsibility for the final product.
+
+
+## Why write code?
+
+::: {.columns}
+::: {.column width="48%"}
+### Manual workflow
+
+- Mistakes are easy to miss
+- Repeating work costs time
+- Steps may be undocumented
+- Workflow is hard to reproduce
+:::
+
+::: {.column width="48%"}
+### Scripted workflow
+
+- Rules are reusable and reviewable
+- Changes can be rerun consistently
+- Every transformation is recorded
+- Workflow is easier to reproduce
+:::
+:::
+
+::: {.key-point}
+Code turns analyses from a sequence of clicks into an **auditable recipe**.
+:::
+
+::: {.notes}
+- Think of how you would perform analyses on Excel
+- Typos, missingness, duplicates, formatting errors
+- Merge, filter, create/remove/transform columns
+:::
+
+
+## Why R?
+
+::: {.columns}
+::: {.column width="66%"}
+- Free and open source
+- Designed for statistics and data analysis
+- Strong data processing and visualization
+- Interactive: create, inspect, and transform objects
+- Extended by packages maintained by a global community
+:::
+
+::: {.column width="28%"}
+![](assets/images/r_logo.png){fig-alt="R logo" width="78%"}
+:::
+:::
+
+::: {.notes}
+- A programming language + an interactive environment
+- Very popular in biostatistics + epidemiology
+- Everything in R is an object
+- Objects are stored in memory → can run and tweak as you go
+:::
+
+
+## Two software philosophies [@kenneth2023sas]
+
++---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| SAS                                                                 | R                                                                                                                         |
++=====================================================================+===========================================================================================================================+
+| Proprietary and paid                                                | Open source and free                                                                                                      |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Centralized validation, documentation, and support by vendor        | Decentralized community-developed ecosystem of packages (validation, quality, and support may vary)                       |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Standardized procedures                                             | Flexible and extensible                                                                                                   |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| Mature regulated workflows                                          | Increasing adoption in regulated workflows                                                                                |
++---------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+
+::: {.columns}
+::: {.column width="28%"}
+![](assets/images/sas_logo.png){fig-alt="SAS logo" width="50%"}
+:::
+
+::: {.column width="66%"}
+SAS historically dominates regulatory drug submissions and pharmacoepidemiology.
+:::
+:::
+
+::: {.notes}
+- **Python:** gaining popularity for ML (but is designed as general-purpose + PyPI generally less strict than CRAN)
+  - *FYI Python philosophy: "There should be one — and preferably only one — obvious way to do it."*
+- **LLM support:** code + documentation
+:::
+
+
+## The regulatory ecosystem is moving
+
+- Pharmaverse coordinates open-source tools for clinical reporting [@eugenio2023pharmaverse]
+- Novo Nordisk completed an R-based new drug application in 2021 [@appsilonteam2024why]
+- FDA expanded accepted R-related file formats in 2025 after industry–FDA collaboration [@rconsortium2025expanded; @rconsortium2026submissions]
+
+::: {.key-point}
+The transition requires **training, infrastructure, governance, and reproducible validation evidence**.
+:::
+
+::: {.notes}
+- **Pharmaverse** (2020) regulatory-compliant R packages: instead of duplicated silos → standardized workflows
+- **Pharmacoepidemiology:** similar motivations, e.g., ICES infrastructure + macros
+- Shift will take time
+:::
+
+
+## R is interactive
+
+::: {.columns}
+::: {.column width="48%"}
+The **console** evaluates expressions immediately:
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| code-line-numbers: "|1|1-2|1-3|1-4"
+x <- 1
+y <- 2
+z <- x + y
+z
+```
+
+::: {.fragment}
+**Scripts** preserve the sequence of commands so the analysis can be rerun, reviewed, and changed.
+:::
+:::
+
+::: {.column width="48%"}
+::: {.fragment}
+![](assets/images/r_console.png){fig-alt="Base R console" width="88%"}
+:::
+:::
+:::
+
+::: {.notes}
+- The basic R app is not pretty!
+- A number of quality of life improvements when using RStudio
+:::
+
+
+## Why RStudio?
+
+RStudio is an integrated development environment for R [@positrstudio].
+
+<div class="rstudio-pane-cycle">
+  <img class="fragment fade-out" data-fragment-index="1" src="assets/images/rstudio_gui.png" alt="RStudio interface showing its four panes">
+  <img class="fragment fade-in-then-out" data-fragment-index="1" src="assets/images/rstudio_console.png" alt="RStudio console pane">
+  <img class="fragment fade-in-then-out" data-fragment-index="2" src="assets/images/rstudio_editor.png" alt="RStudio editor pane">
+  <img class="fragment fade-in-then-out" data-fragment-index="3" src="assets/images/rstudio_env.png" alt="RStudio Environment and History pane">
+  <img class="fragment" data-fragment-index="4" src="assets/images/rstudio_other.png" alt="RStudio Files, Plots, Packages, Help, and Viewer pane">
+</div>
+
+::: {.notes}
+- **Console:** write ad hoc commands (work is lost when R session ends)
+- **Editor:** write reusable scripts (work to be saved)
+- **Environment:** inspect objects in memory
+- **Other:** browse files, view plots, manage packages, view help, and more
+:::
+
+
+## R projects give your repositories a home
+
+::: {.columns}
+::: {.column width="55%"}
+An `.Rproj` file:
+
+- Establishes an initial project working directory
+- Encourages portable relative paths
+- Stores project-specific IDE settings
+- Has its own history (`.Rhistory`)
+:::
+
+::: {.column .project-tree-column width="40%"}
+```text
+.
+├── data/
+├── analysis/
+├── output/
+├── docs/
+└── project.Rproj
+```
+:::
+:::
+
+::: {.key-point}
+Relative paths like `./folder/file.csv` are much preferred over user-specific absolute paths like `/Users/your-name/Desktop/folder/file.csv`.
+:::
+
+::: {.notes}
+- Absolute paths are sensitive to OS, username, and wherever they decide to save the repository → irreproducible
+- Also integrates with Git and `renv` but we will discuss these in Part 2
+:::
+
+
+## Packages extend R
+
+- Packages bundle code, documentation, and sometimes data
+- Base R comes with packages already
+- But base R may not be most efficient, flexible, or readable
+- Install custom packages maintained by global community from CRAN [@rcoreteam2026writing; @crancontributed].
+
+::: {.columns}
+::: {.column width="48%"}
+### Install once
+
+```r
+install.packages("readr")
+```
+:::
+
+::: {.column width="48%"}
+### Load each session
+
+```r
+library(readr)
+
+# Or call one function
+readr::read_csv("data.csv")
+```
+:::
+:::
+
+::: {.notes}
+- External packages are not always better:
+  - Learning curve
+  - Dependencies
+  - May be slower
+  - May require permissions
+  - Textbooks may only use base R
+:::
+
+
+## The Tidyverse
+
+::: {.columns}
+::: {.column width="68%"}
+A very popular collection of packages that share common data representations and design conventions:
+
+- `readr` — import data
+- `dplyr` — transform data
+- `tidyr` — reshape data
+- `ggplot2` — visualize data
+
+`library(tidyverse)` loads the core packages [@wickhamdata].
+:::
+
+::: {.column width="26%"}
+![](assets/images/tidyverse_logo.png){fig-alt="Tidyverse logo" width="92%"}
+:::
+:::
+
+::: {.notes}
+- Can be more efficient and readable than base R
+- R4DS
+:::
+
+
+## Core operators
+
+::: {.columns}
+::: {.column width="52%"}
++----------------+---------------------------------------------+
+| Purpose        | Operators                                   |
++================+=============================================+
+| Assignment     | `<-`                                        |
++----------------+---------------------------------------------+
+| Arithmetic     | `+`, `-`, `*`, `/`, `^`, `sqrt()`, `log()`  |
++----------------+---------------------------------------------+
+| Relational     | `>`, `>=`, `<`, `<=`, `==`, `!=`\           |
+|                | `%in%`                                      |
++----------------+---------------------------------------------+
+| Logical        | `&`, `|`, `!`                               |
++----------------+---------------------------------------------+
+:::
+
+::: {.column width="43%"}
+```{r}
+#| echo: true
+#| output-location: fragment
+x <- 1
+x + 2
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+x > 2
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+x %in% c(1, 2, 3)
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+x > 0 & x < 2
+```
+:::
+:::
+
+Object names may contain letters, digits, periods, and underscores. Use *snake_case* (e.g., `my_variable_name`) [@wickhamdata]. Names cannot start with a digit or underscore, nor a period followed by a digit [@ethzurichquotes].
+
+::: {.notes}
+- What is `x`? It is 1, not 3! Unless you assign it, such as `x <- x + 2`, it will not save.
+:::
+
+
+## Encode decisions with conditions
+
+```{r}
+#| echo: true
+#| output-location: fragment
+#| code-line-numbers: "|1|1-4|1-6|1-9"
+cases <- 75
+
+if (cases > 100) {
+  print("Emergency")
+} else if (cases > 50) {
+  print("Warning")
+} else {
+  print("Caution")
+}
+```
+
+<br>
+
+::: {.key-point}
+Conditions make analytical decisions explicit and reviewable.
+:::
+
+::: {.notes}
+- The second expression is only evaluated if the first is false, therefore to have reached the second expression, cases must be <= 100.
+- Can be a single `if`
+- Can have no `else if`
+- Can have multiple `else if`
+- Can have no `else`
+:::
+
+
+## Repeat decisions with loops
+
+::: {.columns}
+::: {.column width="48%"}
+```{r}
+#| echo: true
+#| output-location: fragment
+cases <- c(25, 75, 125)
+
+for (x in cases) {
+  if (x > 100) {
+    print("Emergency")
+  } else if (x > 50) {
+    print("Warning")
+  } else {
+    print("Caution")
+  }
+}
+```
+:::
+
+::: {.column width="48%"}
+```{r}
+#| echo: true
+#| output-location: fragment
+cases <- 125
+
+while (cases >= 0) {
+  if (cases > 100) {
+    print("Emergency")
+  } else if (cases > 50) {
+    print("Warning")
+  } else {
+    print("Caution")
+  }
+  cases <- cases - 25
+}
+```
+:::
+:::
+
+- `for` loops iterate over a sequence
+- `while` loops continue while a condition remains true.
+
+
+## Objects and function calls
+
+> To understand computations in R, two slogans are helpful:
+>
+> - Everything that exists is an object.
+> - Everything that happens is a function call.
+
+— John M. Chambers [@chambers2014objectoriented]
+
+::: {.notes}
+- Numbers, text, functions, and even packages are all objects
+- Objects are manipulated by function calls (assignment, arithmetic, etc. - and custom functions)
+:::
+
+
+## Type, class, and structure
+
++----------------+----------------------+-----------------------------------------------------+
+| Concept        | Question             | Examples                                            |
++================+======================+=====================================================+
+| **Type**       | How is it stored?    | double, integer, logical, character, list           |
++----------------+----------------------+-----------------------------------------------------+
+| **Class**      | How does it behave?  | numeric, date, logical, character, list, data frame |
++----------------+----------------------+-----------------------------------------------------+
+| **Structure**  | How is it organized? | vector, matrix, array, list, data frame             |
++----------------+----------------------+-----------------------------------------------------+
+
+<br>
+
+::: {.columns}
+::: {.column width="48%"}
+```{r}
+#| echo: true
+#| output-location: fragment
+typeof(1)
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+typeof(as.character(1))
+```
+:::
+
+::: {.column width="48%"}
+```{r}
+#| echo: true
+#| output-location: fragment
+typeof(as.Date("2026-07-15"))
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+class(as.Date("2026-07-15"))
+```
+:::
+:::
+
+
+## Common R data structures
+
+![Data structures in R [@grolemundhandson]](assets/images/r_datastructures.png){fig-alt="Diagram of common R data structures" width="48%"}
+
+
+## Vectors, lists, and data frames
+
+::: {.columns}
+::: {.column width="32%"}
+### Vector
+
+One atomic type:
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_vector <- c("1", "2", "3")
+my_vector
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_vector[2]
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_vector <- 0:6
+my_vector
+```
+:::
+
+::: {.column width="32%"}
+::: {.fragment}
+### List
+
+Arbitrary objects:
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_list <- list("A", c(1, 2))
+my_list
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_list[2]
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_list[[2]]
+```
+:::
+:::
+
+::: {.column width="32%"}
+::: {.fragment}
+### Data frame
+
+Named list of equal-length vectors:
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_df <- data.frame(
+  year = c(2020, 2021),
+  cases = c(25, 125)
+)
+my_df
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_df[,2]
+```
+
+```{r}
+#| echo: true
+#| output-location: fragment
+my_df$cases
+```
+:::
+:::
+:::
+
+::: {.notes}
+- **Data frame:** each column is a vector that can in turn be indexed
+:::
+
+
+## Functions make work reusable
+
+```{r}
+#| echo: true
+#| output-location: fragment
+classify_cases <- function(cases) {
+  response <- if (cases > 100) {
+    "Emergency"
+  } else if (cases > 50) {
+    "Warning"
+  } else {
+    "Caution"
+  }
+  return(response)
+}
+
+classify_cases(75)
+```
+
+::: {.key-point}
+Functions turn a sequence of commands into a reusable tool.
+:::
+
+::: {.notes}
+- Functions return values, but can also have intentional side effects (e.g., printing to console, plotting a graph, writing to file)
+:::
+
+
+
+## From files to findings[@wickhamdata]
+
+```{mermaid}
+flowchart LR
+  A[Read data] --> B[Clean]
+  B --> C
+  subgraph analysis[" "]
+    direction LR
+    C[Transform] --> D[Explore]
+    D --> E[Model]
+    E --> C
+  end
+  analysis --> F[Communicate]
+  style analysis fill:#eeeeee,stroke:none
+```
+
+<hr class="slide-divider">
+
+::: {.fragment}
+Common file types include `.csv`, `.xlsx`, `sas7bdat`, `.rds`, and `.RData`.
+
+::: {.file-type-icons}
+::: {.file-type-icon}
+![](assets/images/csv_icon.png){fig-alt="CSV file icon"}
+:::
+::: {.file-type-icon}
+![](assets/images/excel_icon.png){fig-alt="Microsoft Excel logo"}
+:::
+::: {.file-type-icon}
+![](assets/images/sas_logo.png){fig-alt="SAS logo"}
+:::
+::: {.file-type-icon}
+![](assets/images/r_logo.png){fig-alt="R logo"}
+:::
+:::
+:::
+
+::: {.notes}
+- Data scientists spend most of their time on data wrangling - not modeling
+- Cleaning: typos, missingness, duplicates, formatting
+- Transforming: merge, filter, create/remove/transform columns
+:::
+
+
+## R for ICES projects
+
+- ICES is the institution that stores administrative health data in Ontario, Canada
+- It has well-established SAS infrastructure and macros
+- R is supported but you need to apply for access to the Analytic Grid Pilot program
+
+::: {.notes}
+- R on RAE is incredibly outdated
+- AGP has relatively limited RAM though
+:::
+
+
+## Reproducibility habits
+
+- Keep raw data separate from processed data
+- Use relative paths
+- Load only the packages that you need
+- Record R and package versions
+- Never rely on an old `.RData` workspace to reconstruct an analysis
+
+::: {.key-point}
+A reproducible workflow records **data, code, versions, and decisions**.
+:::
+
+
+## Key takeaways
+
+1. R makes data workflows explicit, reusable, and inspectable.
+2. RStudio and R projects organize the work around your scripts.
+3. Packages extend R—but introduce dependencies that require control.
+4. Objects have types, classes, and structures.
+5. Conditions, loops, and functions turn decisions into reusable code.
+
+
+## Further readings
+
+- R for Data Science (2e) [@wickhamdata]
+- Hands-On Programming with R [@grolemundhandson]
+- Object-Oriented Programming, Functional Programming and R [@chambers2014objectoriented]
+
+::: {.notes}
+- See book for more details, such as updating packages
+:::
+
+
+## References {#refs}
+
+<script>
+window.addEventListener("load", function () {
+  function fitReferenceList() {
+    const isPrintView = window.location.search.includes("print-pdf");
+    const slide = isPrintView
+      ? document.getElementById("refs")
+      : Reveal.getCurrentSlide();
+    if (!slide || slide.id !== "refs") return;
+
+    const references = slide.querySelector(":scope > .references");
+    if (!references) return;
+
+    // Start at the CSS size, then reduce only the bibliography if needed.
+    references.style.fontSize = "";
+    const maximum = parseFloat(window.getComputedStyle(references).fontSize);
+    const minimum = 10;
+    const slideBox = slide.getBoundingClientRect();
+    const referencesBox = references.getBoundingClientRect();
+    const availableHeight = slideBox.bottom - referencesBox.top - 8;
+
+    if (referencesBox.height <= availableHeight) return;
+
+    let lower = minimum;
+    let upper = maximum;
+    for (let iteration = 0; iteration < 12; iteration += 1) {
+      const size = (lower + upper) / 2;
+      references.style.fontSize = `${size}px`;
+      if (references.getBoundingClientRect().height <= availableHeight) {
+        lower = size;
+      } else {
+        upper = size;
+      }
+    }
+    references.style.fontSize = `${lower}px`;
+  }
+
+  fitReferenceList();
+  Reveal.on("ready", fitReferenceList);
+  Reveal.on("slidechanged", function (event) {
+    if (event.currentSlide.id === "refs") {
+      window.requestAnimationFrame(fitReferenceList);
+    }
+  });
+  window.addEventListener("resize", function () {
+    window.requestAnimationFrame(fitReferenceList);
+  });
+});
+</script>

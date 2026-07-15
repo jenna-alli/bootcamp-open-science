@@ -1,0 +1,42 @@
+---
+title: "Dependencies"
+---
+
+<div style="height: 2em;"></div>
+
+
+## `renv` setup
+
+The `renv` package helps you manage project-specific R dependencies by recording the package versions used. To get started, you can either initialize `renv` when creating an R project (RStudio will ask you to check off a box), or you can run `renv::init()` in the console.
+
+This creates a project-specific library `./renv/library` and a `renv.lock` file that records the package versions and metadata, and some files needed to activate the project environment. Packages will be installed into the project library rather than your default system library for R. When using Git, the project library is typically ignored, while the `renv.lock` and activation files (`.Rprofile` and `./renv`) are committed so others can recreate the same environment. Overall, `renv` provides the benefits of **reproducibility** and **portability** [@usheyintroduction].
+
+## `renv` wrapping up
+
+When you are ready to share your work (and the means to reproduce your environment), here are the functions you will need:
+
+- `renv::status()` is a visual check to see which packages you installed to this repo and used (or did not use)
+- `renv::clean()` uninstalls any unused packages in this repo
+- `renv::snapshot` writes the latest package versions and metadata to `renv.lock`
+- `renv::restore()` as a final check -- it should say that you are already synchronized with lockfile
+
+## `renv` restoring packages
+
+To restore package versions, run `renv::restore()`.
+
+::: {.callout-important}
+## **Important**
+Besides packages, `renv` also tracks and records your R version, but it will not install or switch your R version upon `renv::restore()` because the package itself must run inside R. If you run `renv::restore()` on a different version of R, `renv` may issue a warning if some packages fail to install or work, but you must always remember to check this. For instructions on how to switch between different versions of R, see the [Bootcamp Prep book](https://data-science-bootcamp-2026.github.io/bootcamp-prep/03_update_software.html).
+
+Similarly, `renv` does not your operating system, system libraries, compiler versions have all stayed the same [@usheyintroduction]. For that you may need tools like Nix.
+:::
+
+
+## `renv` updating packages
+
+Maintaining project-specific libraries takes up more disk space. However, this isolation is useful: it lets you run projects that have different package versions without conflicts. The downside is that packages can become outdated over time if you do not regularly update them. Do so with `renv::update`, followed by `renv::snapshot` to record the new versions.
+
+
+::: {.content-visible when-format="html"}
+## References
+:::
