@@ -1,5 +1,6 @@
 ---
 nocite: |
+    @bryanhappy
     @wang2023harmonized
     @xie2026markdown
 ---

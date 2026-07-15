@@ -53,7 +53,7 @@ VS Code (Microsoft) and RStudio (Posit) are both development environemnts that i
 VS Code:
 
 - Has a much larger extension ecosystem, including support for many AI coding assistants such as GitHub Copilot, OpenAI Codex, and Claude Code. RStudio only has Posit AI.
-- Has stronger Git and GitHub integration.
+- Has stronger Git and GitHub integration. RStudio is clunkier [@bryanhappy]. There are other way to interface with Git and GitHub too, such as GitHub Desktop.
 
 RStudio:
 
