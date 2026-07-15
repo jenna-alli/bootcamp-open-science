@@ -2,3 +2,9 @@
 **/*.quarto_ipynb
 /slides.html
 /slides_files/
+
+# LaTeX intermediates produced while rendering the PDF book
+/*.aux
+/*.log
+/*.tex
+/*.toc

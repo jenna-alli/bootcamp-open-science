@@ -69,7 +69,7 @@ Tazare *et al.* [@tazare2024sharing] reviewed all studies published in the *Phar
 
 Code sharing has many advantages, including facilitating replication and reuse, detecting errors and misconduct, encouraging documentation, and promoting trust. Nonetheless, code sharing also has barriers. Privacy is a major concern, but another is protecting intellectual property rights. Strategies to address this include licensing, graphical study design diagrams, and pseudocode [@tazare2024sharing]. *Where* authors share code is also important. Most studies that shared code did so as supplementary material [@tazare2024sharing]. However, this is difficult to discover, not indexed in search engines, does not support complex filing structures, and requires copy-pasting [@weberpals2025lets].
 
-![Location of code, when shared [@tazare2024sharing]](assets/images/pds5856-fig-0001-m.jpg){width=600px}
+![Location of code, when shared [@tazare2024sharing]](assets/images/pds5856-fig-0001-m.png){width=600px}
 
 There are many other aspects of [open science](02_open_science.qmd) [@centerforopensciencewhat]. For this session, we will only focus on the technical aspects of open science that facilitate reproducible analytic workflows [@weberpals2024fairification]. While there are many ways to implement these practices (e.g., GitHub vs. GitLab, Quarto vs. R Markdown, GUI vs. CLI), the tools and workflows presented here represent one opinionated approach chosen for their simplicity and ease of adoption.
 
@@ -82,6 +82,5 @@ All instructional material in this book was written by the author. Generative AI
 ::: {.content-visible when-format="html"}
 ## References
 :::
-
 
 

@@ -48,12 +48,12 @@ Besides version control, Git is also useful for **sharing and collaboration** --
 
 ## VS Code
 
-VS Code (Microsoft) and RStudio (Posit) are both development environemnts that include a text editor and terminal, but they are designed with different priorities. I often keep both open at the same time.
+VS Code (Microsoft) and RStudio (Posit) are both development environments that include a text editor and terminal, but they are designed with different priorities. I often keep both open at the same time.
 
 VS Code:
 
 - Has a much larger extension ecosystem, including support for many AI coding assistants such as GitHub Copilot, OpenAI Codex, and Claude Code. RStudio only has Posit AI.
-- Has stronger Git and GitHub integration. RStudio is clunkier [@bryanhappy]. There are other way to interface with Git and GitHub too, such as GitHub Desktop.
+- Has stronger Git and GitHub integration. RStudio is clunkier [@bryanhappy]. There are other ways to interface with Git and GitHub too, such as GitHub Desktop.
 
 RStudio:
 

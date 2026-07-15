@@ -11,7 +11,7 @@ title: "Open software"
 
 Open source software is one aspect of open science [@centerforopensciencewhat]. However, open source software is often described in contrast to, and jointly with, free software:
 
-- **The free software definition** focuses on the ethical and moral aspects of software freedom. The *four essential freedoms* are considered fundamental rights (notice "free" is not refering to price) [@gnuproject2026what]:
+- **The free software definition** focuses on the ethical and moral aspects of software freedom. The *four essential freedoms* are considered fundamental rights (notice "free" is not referring to price) [@gnuproject2026what]:
 	1. Freedom to run without restrictions
 	2. Freedom to study/modify the source code
 	3. Freedom to distribute copies
@@ -84,7 +84,7 @@ SOFTWARE.
 
 There are many FOSS licenses that differ in terms and conditions. Not all licenses are as permissive as the MIT license. We will discuss licenses more [later](05_repo_structure.qmd#license), but besides **copyright licenses** that govern how software can be used, modified, or distributed, there are also **copyleft licenses** that require derivative works to be released under the same terms. For example, if a copyleft license requires continued openness, this may be problematic if you want to develop a proprietary product.
 
-Another challenge arises when you combine open source software that have different licenses. **License conflicts** occurs when the licenses impose incompatible requirements, making it impossible to satisfy the terms of all of them simultaneously.
+Another challenge arises when you combine open source software that have different licenses. **License conflicts** occur when the licenses impose incompatible requirements, making it impossible to satisfy the terms of all of them simultaneously.
 
 
 ## Examples

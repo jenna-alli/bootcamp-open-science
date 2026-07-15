@@ -17,7 +17,7 @@ When you are ready to share your work (and the means to reproduce your environme
 
 - `renv::status()` is a visual check to see which packages you installed to this repo and used (or did not use)
 - `renv::clean()` uninstalls any unused packages in this repo
-- `renv::snapshot` writes the latest package versions and metadata to `renv.lock`
+- `renv::snapshot()` writes the latest package versions and metadata to `renv.lock`
 - `renv::restore()` as a final check -- it should say that you are already synchronized with lockfile
 
 ## `renv` restoring packages
@@ -34,7 +34,7 @@ Similarly, `renv` does not your operating system, system libraries, compiler ver
 
 ## `renv` updating packages
 
-Maintaining project-specific libraries takes up more disk space. However, this isolation is useful: it lets you run projects that have different package versions without conflicts. The downside is that packages can become outdated over time if you do not regularly update them. Do so with `renv::update`, followed by `renv::snapshot` to record the new versions.
+Maintaining project-specific libraries takes up more disk space. However, this isolation is useful: it lets you run projects that have different package versions without conflicts. The downside is that packages can become outdated over time if you do not regularly update them. Do so with `renv::update()`, followed by `renv::snapshot` to record the new versions.
 
 
 ::: {.content-visible when-format="html"}

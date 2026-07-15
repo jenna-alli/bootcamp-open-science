@@ -57,8 +57,6 @@ The MIT License is simple and permissive. By contrast, the GNU GPLv3 license is 
 - E.g., combining software under competing copyleft licenses
 - E.g., combining software under non-commercial use into an open source project (this will prevent the project from being used commercially)
 
-. Another example is when non-commercial code is incorporated into open source projects, which prevents the combination from being used commercially.
-
 To add a license to your repo, you can generate one when you first create the repo. Otherwise, you can copy the license into a plain text file called `LICENSE` saved to your project root.
 
 

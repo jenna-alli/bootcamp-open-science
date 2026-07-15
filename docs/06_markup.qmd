@@ -16,7 +16,7 @@ title: "Markup"
 +----------+-------------------------------------------------------------------------+
 | HTML     | A web page viewed in a browser                                          |
 +----------+-------------------------------------------------------------------------+
-| LaTeX    | A typeset academic paper; expecially great for mathematical expressions |
+| LaTeX    | A typeset academic paper; especially great for mathematical expressions |
 +----------+-------------------------------------------------------------------------+
 | XML      | This is what underlies `.docx`, `.xlsx`, `.pptx`                        |
 +----------+-------------------------------------------------------------------------+

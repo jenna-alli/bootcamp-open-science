@@ -110,12 +110,12 @@ When you reach a stable version of the project:
 
 ![VS Code - Source Control](assets/images/vscode_source_control.png){width=400px}
 
-23. Stage changes by hovering your pointer over the files and click the `+` symbol; if you want to stage all, hover your pointer over the the **Changes** row and click its `+` symbol
+23. Stage changes by hovering your pointer over the files and click the `+` symbol; if you want to stage all, hover your pointer over the **Changes** row and click its `+` symbol
     - Notice that empty folders cannot be staged because Git tracks files, not folders
 24. Commit changes by providing a brief commit message in the free text field and clicking the blue **Commit** button
 25. Push changes by clicking the blue **Publish branch** button; if you do not see it (likely because you did not stage all changes), hover your pointer over the **CHANGES** row and click its `...` symbol, then click **Push**
 
-Now go to GitHub and you should see a yellow banner notifying you that you can create a pull request. A pull request is a request to merge, i.e., apply changes form one branch to another.
+Now go to GitHub and you should see a yellow banner notifying you that you can create a pull request. A pull request is a request to merge, i.e., apply changes from one branch to another.
 
 26. You can click that green **Compare & pull request** button to create a pull request; if it is not there, go to the **Pull requests** tab and click the green **New pull request** button, then select **base: main** and **compare:** as the branch you want to add changes from
     - "Pull request" is an unfortunate name as it feels more like *pushing* changes to main
@@ -192,9 +192,9 @@ To fork, click the **Fork** button on the top right of a repo's GitHub page. You
 
 ## GitHub Copilot
 
-GitHub Copilot is a coding agent developed by Microsoft that is integrated into your Git and coding workflow. It can be powered by different large language models, depending on the task. It has contextual learning - the context includes your prompt as well as your repo (docs, code, etc.). The chat box with GitHub Copilot is integrated into VS Code on the right panel under the tab called **CHAT**. GitHub Copilot can also offer code completions as you type.
+GitHub Copilot is a coding agent developed by Microsoft that is integrated into your Git and coding workflow. It can be powered by different large language models, depending on the task. It understands context, which includes your prompt as well as your repo (docs, code, etc.). The chat box with GitHub Copilot is integrated into VS Code on the right panel under the tab called **CHAT**. GitHub Copilot can also offer code completions as you type.
 
-Although there is a free tier, the usage limits are quite low. You can check your usage by clicking the GitHub Copilot logo on the bototm right of VS Code. GitHub education, mentioned in the bootcamp prep, would give you higher limits, more features, and some self-paced courses.
+Although there is a free tier, the usage limits are quite low. You can check your usage by clicking the GitHub Copilot logo on the bottom right of VS Code. GitHub education, mentioned in the bootcamp prep, would give you higher limits, more features, and some self-paced courses.
 
 Coding assistants can help with [@weberpals2025lets]:
 
